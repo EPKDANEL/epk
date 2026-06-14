@@ -111,11 +111,21 @@ opacity: 0.8;
 font-weight: 400;
 }
 
+/* 🔥 LIVE BLOCK — НОВЫЙ УРОВЕНЬ */
+.live-frame {
+border: 1px solid rgba(255,255,255,0.15);
+padding: 12px;
+border-radius: 14px;
+background: rgba(255,255,255,0.02);
+backdrop-filter: blur(6px);
+box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
 .video {
 width: 100%;
 aspect-ratio: 16/9;
-background: #000;
-margin-top: 20px;
+border-radius: 10px;
+overflow: hidden;
 }
 
 iframe {
@@ -124,6 +134,15 @@ height: 100%;
 border: none;
 }
 
+.live-caption {
+margin-top: 12px;
+font-size: 13px;
+opacity: 0.6;
+letter-spacing: 1px;
+text-align: center;
+}
+
+/* MUSIC */
 .track {
 padding: 18px 0;
 border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -155,10 +174,19 @@ letter-spacing: 1px;
 <!-- LIVE -->
 <section id="live">
 <div class="container">
+
 <h2>LIVE</h2>
+
+<div class="live-frame">
 
 <div class="video">
 <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+</div>
+
+<div class="live-caption">
+LIVE PERFORMANCE • FULL SET
+</div>
+
 </div>
 
 </div>
