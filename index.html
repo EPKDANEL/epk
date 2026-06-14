@@ -3,119 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EPK Artist</title>
+
+<title>ДАНЭЛЬ</title>
 
 <style>
 body {
-margin:0;
+margin: 0;
 font-family: Arial, sans-serif;
-background:#0f0f0f;
-color:#fff;
+background: #111111;
+color: #EDEDED;
+line-height: 1.6;
 }
 
-header {
-padding:80px 20px;
-text-align:center;
-background:linear-gradient(120deg,#111,#222);
+a {
+color: #EDEDED;
+text-decoration: none;
 }
 
-h1 {
-font-size:48px;
-margin:0;
+.container {
+max-width: 900px;
+margin: 0 auto;
+padding: 0 20px;
 }
 
-p {
-max-width:700px;
-margin:20px auto;
-color:#bbb;
-line-height:1.5;
+/* HERO */
+.hero {
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
 }
 
+.hero h1 {
+font-size: 56px;
+letter-spacing: 2px;
+margin: 0;
+}
+
+.hero p {
+margin-top: 15px;
+opacity: 0.7;
+}
+
+.button {
+margin-top: 30px;
+padding: 12px 24px;
+border: 1px solid #EDEDED;
+border-radius: 30px;
+transition: 0.3s;
+}
+
+.button:hover {
+background: #EDEDED;
+color: #111111;
+}
+
+/* SECTIONS */
 section {
-padding:60px 20px;
-max-width:900px;
-margin:auto;
+padding: 100px 0;
 }
 
 h2 {
-border-left:4px solid #fff;
-padding-left:10px;
+font-size: 22px;
+margin-bottom: 20px;
+letter-spacing: 1px;
+opacity: 0.9;
 }
 
 .video {
-width:100%;
-aspect-ratio:16/9;
-margin-top:20px;
+width: 100%;
+aspect-ratio: 16/9;
+background: #000;
+margin-top: 20px;
 }
 
 iframe {
-width:100%;
-height:100%;
+width: 100%;
+height: 100%;
+border: none;
 }
 
+/* MUSIC */
 .track {
-background:#1a1a1a;
-padding:10px;
-margin:10px 0;
-border-radius:8px;
+padding: 15px;
+border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.contact {
-text-align:center;
-padding:40px;
-background:#111;
+/* FOOTER */
+footer {
+padding: 60px 0;
+text-align: center;
+opacity: 0.6;
+font-size: 14px;
 }
 </style>
+
 </head>
 
 <body>
 
-<header>
+<!-- HERO -->
+<div class="hero">
 <h1>ДАНЭЛЬ</h1>
-<p>• Москва •</p>
-</header>
+<p>Авторская музыка • Live • Любовь</p>
 
-<section>
-<h2>О ПРОЕКТЕ</h2>
-<p>
-<p>
-<p>Жанры: Инди/Поп/Фолк/Хип-хоп/Электронная музыка
-<p>Вдохновлён нуарной лириой урбана и отечетсвенной поэзией<br>
-Современным электронным звучанием и отголосками народных фолк-мотивов<br>
-<p>Акцент на живое сценическое исполнение
-<p>Проект с большим опытом выступлений
-<p>Открыты к фестивалям и концертной деятельности<br>
-<p>
-</section>
+<a class="button" href="#live">Смотреть live</a>
+</div>
 
-<section>
-<h2>LIVE VIDEO</h2>
+<!-- LIVE -->
+<section id="live">
+<div class="container">
+<h2>LIVE</h2>
+
 <div class="video">
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+</div>
+
 </div>
 </section>
 
+<!-- MUSIC -->
 <section>
+<div class="container">
 <h2>MUSIC</h2>
 
-<div class="track">Track 1 — название</div>
-<div class="track">Track 2 — название</div>
-<div class="track">Track 3 — название</div>
+<div class="track">Песня 1</div>
+<div class="track">Песня 2</div>
+<div class="track">Песня 3</div>
 
+</div>
 </section>
 
+<!-- STORY -->
 <section>
-<h2>LIVE EXPERIENCE</h2>
+<div class="container">
+<h2>Несколько слов</h2>
+
 <p>
-Опыт выступлений, сцены, фестивали, города.
+Данэль — артист, который превращает сцену в пространство живого диалога с людьми.
+Каждый концерт — это эмоциональное путешествие от лёгкости до глубокой лирики,
+где главное — не жанр, а состояние человека.
 </p>
+
+</div>
 </section>
 
-<section class="contact">
-<h2>CONTACT</h2>
-<p>Email: yourmail@example.com</p>
-<p>VK / Telegram / Manager</p>
-</section>
+<!-- CONTACT -->
+<footer>
+<div class="container">
+ДАНЭЛЬ • Booking / Media / Live
+</div>
+</footer>
 
 </body>
 </html>
