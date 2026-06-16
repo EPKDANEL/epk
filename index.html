@@ -3,220 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ДАНЭЛЬ</title>
-
 <style>
-html {
-scroll-behavior: smooth;
+html{scroll-behavior:smooth}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:radial-gradient(circle at top,#1a1a1a 0%,#0e0e0e 60%,#0b0b0b 100%);
+color:#EDEDED;
+line-height:1.6;
 }
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+}
+.hero h1,.hero p,.hero a{
+animation:fadeUp 1.2s ease forwards;
+opacity:0;
+transform:translateY(10px)
+}
+.hero h1{font-size:72px;letter-spacing:4px;margin:0;font-weight:500;animation-delay:.2s}
+.hero p{margin-top:15px;opacity:.7;font-size:14px;letter-spacing:1px;animation-delay:.5s}
+.button{
+display:inline-block;
+margin-top:35px;
+padding:12px 26px;
+border:1px solid #EDEDED;
+border-radius:30px;
+color:#EDEDED;
+text-decoration:none;
+transition:.3s;
+animation-delay:.8s;
+}
+.button:visited{color:#EDEDED}
+.button:hover{background:#EDEDED;color:#111}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+section{padding:120px 0}
+.container{max-width:900px;margin:auto;padding:0 20px}
+h2{font-size:18px;letter-spacing:2px;margin-bottom:25px;font-weight:400;opacity:.8}
 
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: radial-gradient(circle at top, #1a1a1a 0%, #0e0e0e 60%, #0b0b0b 100%);
-color: #EDEDED;
-line-height: 1.6;
+.live-frame{
+position:relative;
+border:1px solid rgba(255,255,255,.12);
+border-radius:16px;
+overflow:hidden;
+background:#000;
+box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
-
-/* HERO */
-.hero {
-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-padding: 0 20px;
-position: relative;
-overflow: hidden;
+.video-wrap{position:relative;aspect-ratio:16/9;cursor:pointer}
+video{width:100%;height:100%;display:block;background:#000}
+.play-btn{
+position:absolute;
+left:50%;top:50%;
+transform:translate(-50%,-50%);
+width:86px;height:86px;
+border-radius:50%;
+border:1px solid rgba(255,255,255,.7);
+background:rgba(0,0,0,.35);
+color:#fff;
+font-size:34px;
+display:flex;
+align-items:center;
+justify-content:center;
+backdrop-filter:blur(6px);
+transition:.3s;
 }
-
-.hero h1,
-.hero p,
-.hero a {
-position: relative;
-animation: fadeUp 1.2s ease forwards;
-opacity: 0;
-transform: translateY(10px);
+.video-wrap:hover .play-btn{transform:translate(-50%,-50%) scale(1.06)}
+.play-btn.hidden{opacity:0;pointer-events:none}
+.progress{
+position:absolute;
+left:0;bottom:0;
+height:3px;width:100%;
+background:rgba(255,255,255,.08);
+opacity:0;
+transition:.3s;
 }
-
-.hero h1 {
-font-size: 72px;
-letter-spacing: 4px;
-margin: 0;
-font-weight: 500;
-animation-delay: 0.2s;
+.video-wrap:hover .progress{opacity:1}
+.bar{
+height:100%;
+width:0%;
+background:#fff;
 }
-
-.hero p {
-margin-top: 15px;
-opacity: 0.7;
-font-size: 14px;
-letter-spacing: 1px;
-animation-delay: 0.5s;
+.live-caption{
+padding:14px;
+text-align:center;
+font-size:13px;
+letter-spacing:1px;
+opacity:.6;
 }
-
-.button {
-display: inline-block;
-margin-top: 35px;
-padding: 12px 26px;
-border: 1px solid #EDEDED;
-border-radius: 30px;
-transition: 0.3s ease;
-font-size: 14px;
-color: #EDEDED;
-text-decoration: none;
-animation-delay: 0.8s;
-}
-
-.button:visited {
-color: #EDEDED;
-}
-
-.button:hover {
-background: #EDEDED;
-color: #111111;
-}
-
-@keyframes fadeUp {
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
-
-section {
-padding: 120px 0;
-}
-
-.container {
-max-width: 900px;
-margin: 0 auto;
-padding: 0 20px;
-}
-
-h2 {
-font-size: 18px;
-letter-spacing: 2px;
-margin-bottom: 25px;
-opacity: 0.8;
-font-weight: 400;
-}
-
-/* LIVE BLOCK */
-.live-frame {
-border: 1px solid rgba(255,255,255,0.15);
-padding: 12px;
-border-radius: 14px;
-background: rgba(255,255,255,0.02);
-backdrop-filter: blur(6px);
-box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-
-.video {
-width: 100%;
-aspect-ratio: 16/9;
-border-radius: 10px;
-overflow: hidden;
-}
-
-iframe {
-width: 100%;
-height: 100%;
-border: none;
-}
-
-.live-caption {
-margin-top: 12px;
-font-size: 13px;
-opacity: 0.6;
-letter-spacing: 1px;
-text-align: center;
-}
-
-/* MUSIC */
-.track {
-padding: 18px 0;
-border-bottom: 1px solid rgba(255,255,255,0.08);
-font-size: 15px;
-}
-
-footer {
-padding: 80px 0;
-text-align: center;
-opacity: 0.5;
-font-size: 13px;
-letter-spacing: 1px;
-}
-
+.track{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+footer{padding:80px 0;text-align:center;opacity:.5;font-size:13px}
 </style>
-
 </head>
-
 <body>
 
-<!-- HERO -->
 <div class="hero">
 <h1>ДАНЭЛЬ</h1>
 <p>Авторская музыка</p>
-
 <a class="button" href="#live">Смотреть</a>
 </div>
 
-<!-- LIVE -->
 <section id="live">
 <div class="container">
-
 <h2>LIVE</h2>
 
 <div class="live-frame">
-
-<div class="video">
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+<div class="video-wrap" id="player">
+<video id="video" preload="metadata" poster="poster.jpg">
+<source src="live.mp4" type="video/mp4">
+</video>
+<div class="play-btn" id="play">▶</div>
+<div class="progress"><div class="bar" id="bar"></div></div>
 </div>
-
-<div class="live-caption">
-LIVE PERFORMANCE • FULL SET
-</div>
-
+<div class="live-caption">LIVE SESSION</div>
 </div>
 
 </div>
 </section>
 
-<!-- MUSIC -->
 <section>
 <div class="container">
 <h2>MUSIC</h2>
-
 <div class="track">Песня 1</div>
 <div class="track">Песня 2</div>
 <div class="track">Песня 3</div>
-
 </div>
 </section>
 
-<!-- STORY -->
 <section>
 <div class="container">
 <h2>Несколько слов</h2>
-
-<p>
-Данэль — артист, который превращает сцену в пространство живого диалога с людьми.
-Каждый концерт — это эмоциональное путешествие от лёгкости до глубокой лирики,
-где главное — не жанр, а состояние человека.
-</p>
-
+<p>Данэль — артист, который превращает сцену в пространство живого диалога с людьми. Каждый концерт — эмоциональное путешествие от лёгкости до глубокой лирики.</p>
 </div>
 </section>
 
-<!-- CONTACT -->
-<footer>
-<div class="container">
-ДАНЭЛЬ • Booking / Media / Live
-</div>
-</footer>
+<footer><div class="container">ДАНЭЛЬ • Booking / Media / Live</div></footer>
+
+<script>
+const v=document.getElementById('video');
+const p=document.getElementById('play');
+const wrap=document.getElementById('player');
+const bar=document.getElementById('bar');
+
+function toggle(){
+ if(v.paused){v.play();p.classList.add('hidden');}
+ else{v.pause();p.classList.remove('hidden');}
+}
+wrap.addEventListener('click',toggle);
+v.addEventListener('ended',()=>p.classList.remove('hidden'));
+v.addEventListener('timeupdate',()=>{
+ if(v.duration){
+   bar.style.width=(v.currentTime/v.duration*100)+'%';
+ }
+});
+</script>
 
 </body>
 </html>
