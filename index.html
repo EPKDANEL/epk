@@ -32,20 +32,6 @@ position: relative;
 overflow: hidden;
 }
 
-.hero::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: url("https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=2000&q=60");
-background-size: cover;
-background-position: center;
-opacity: 0.08;
-filter: blur(2px);
-}
-
 .hero h1,
 .hero p,
 .hero a {
@@ -72,13 +58,20 @@ animation-delay: 0.5s;
 }
 
 .button {
+display: inline-block;
 margin-top: 35px;
 padding: 12px 26px;
 border: 1px solid #EDEDED;
 border-radius: 30px;
 transition: 0.3s ease;
 font-size: 14px;
+color: #EDEDED;
+text-decoration: none;
 animation-delay: 0.8s;
+}
+
+.button:visited {
+color: #EDEDED;
 }
 
 .button:hover {
@@ -111,7 +104,7 @@ opacity: 0.8;
 font-weight: 400;
 }
 
-/* 🔥 LIVE BLOCK — НОВЫЙ УРОВЕНЬ */
+/* LIVE BLOCK */
 .live-frame {
 border: 1px solid rgba(255,255,255,0.15);
 padding: 12px;
